@@ -1,0 +1,31 @@
+from math import sqrt
+
+def func(x):
+   
+    result=1
+    
+    k=int(sqrt(x))+1
+    
+    for i in range(2,k):
+        
+        if x%i==0 and i!=sqrt(x):
+            
+           result+=i+x/i
+       
+        else:
+            
+           if (x%i==0 and i==sqrt(x)):
+                
+               result=i+ result    
+     return result
+
+result=0
+
+for i in range(4,10001):
+   
+    k=func(i)
+    
+    if k!=i and func(k)==i:
+      
+       result=i+ result
+print(result)
